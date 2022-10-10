@@ -1,0 +1,189 @@
+@mixin transition {
+  transition-property: color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.nav {
+  display: none;
+}
+
+@media screen and (min-width: 768px) {
+  .menu-toggle {
+    display: none;
+  }
+  .nav {
+    list-style: none;
+    display: flex;
+
+    padding-top: 32px;
+    padding-right: 101px;
+  }
+  .nav__agency {
+    font-family: "Roboto";
+    font-weight: 500;
+    color: var(--light-color);
+    text-decoration: none;
+    display: flex;
+    margin-right: 60px;
+    @include transition;
+    position: relative;
+    font-size: 14px;
+
+    &:hover {
+      color: var(--light-color);
+    }
+
+    &:active {
+      color: var(--light-color);
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 34px;
+      background: var(--light-color);
+      height: 4px;
+      border-radius: 10px 10px 10px 10px;
+    }
+  }
+
+  .nav__portfolio {
+    font-family: "Roboto";
+    font-weight: 500;
+    font-size: 14px;
+    color: var(--brand-color);
+    text-decoration: none;
+    display: flex;
+    margin-right: 60px;
+    transition-property: color;
+    @include transition;
+    &:hover {
+      color: var(--light-color);
+    }
+  }
+  .nav__contact {
+    font-family: "Roboto";
+    color: var(--brand-color);
+    text-decoration: none;
+    font-weight: 500;
+    display: flex;
+    font-size: 14px;
+    @include transition;
+    &:hover {
+      color: var(--light-color);
+    }
+  }
+}
+
+/*DESKTOP*/
+
+@media screen and (min-width: 1200px) {
+  .menu-toggle {
+    display: none;
+  }
+  .nav {
+    list-style: none;
+    display: flex;
+
+    padding-top: 32px;
+
+    align-content: center;
+  }
+
+  .nav__agency {
+    font-family: "Roboto";
+    font-weight: 500;
+    color: var(--light-color);
+    text-decoration: none;
+    display: flex;
+    margin-right: 46px;
+    @include transition;
+    position: relative;
+
+    &:hover {
+      color: var(--light-color);
+    }
+
+    &:active {
+      color: var(--light-color);
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 45px;
+      background: var(--light-color);
+      height: 4px;
+      border-radius: 10px 10px 10px 10px;
+    }
+  }
+
+  .nav__portfolio-portfolio {
+    font-family: "Roboto";
+    color: var(--light-color);
+    text-decoration: none;
+    font-weight: 500;
+    margin-right: 46px;
+    @include transition;
+    position: relative;
+
+    &:hover {
+      color: var(--light-color);
+    }
+    &:active {
+      color: var(--light-color);
+    }
+    &:focus {
+      color: var(--light-color);
+    }
+    &::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 42px;
+      background: var(--light-color);
+      height: 4px;
+      border-radius: 10px 10px 10px 10px;
+    }
+  }
+  .nav__portfolio-agency {
+    font-family: "Roboto";
+    color: var(--brand-color);
+    text-decoration: none;
+    font-weight: 500;
+    margin-right: 46px;
+    @include transition;
+    &:hover {
+      color: var(--light-color);
+    }
+  }
+  .nav__portfolio {
+    font-family: "Roboto";
+    font-weight: 500;
+    color: var(--brand-color);
+    text-decoration: none;
+    display: flex;
+    margin-right: 46px;
+    transition-property: color;
+    @include transition;
+    &:hover {
+      color: var(--light-color);
+    }
+  }
+  .nav__contact {
+    font-family: "Roboto";
+    color: var(--brand-color);
+    text-decoration: none;
+    font-weight: 500;
+    @include transition;
+    &:hover {
+      color: var(--light-color);
+    }
+  }
+}

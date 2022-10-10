@@ -1,0 +1,106 @@
+@mixin transition {
+  transition-property: color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.clients-header {
+  text-align: center;
+  font-weight: 700;
+  font-size: 28px;
+  padding-top: 60px;
+}
+
+.clients {
+  justify-content: center;
+  padding-top: 47px;
+  list-style: none;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: center;
+  display: flex;
+  gap: 30px;
+}
+.clients__img {
+  width: 210px;
+  height: 92px;
+  border: 1px solid rgba(175, 177, 184, 1);
+  border-radius: 4px;
+  align-content: flex-start;
+  fill: var(--clients);
+  display: flex;
+
+  @include transition;
+  &:hover {
+    fill: var(--light-color);
+    border-color: var(--light-color);
+    cursor: pointer;
+  }
+  &:focus {
+    fill: var(--light-color);
+    border-color: var(--light-color);
+    cursor: pointer;
+  }
+}
+.clients__img-img {
+  margin: auto;
+}
+/*TABLET*/
+
+@media screen and (min-width: 768px) {
+  .clients {
+    justify-content: center;
+    padding-top: 47px;
+    list-style: none;
+    flex-direction: row;
+    flex-wrap: wrap;
+    display: flex;
+    gap: 30px;
+  }
+  .clients__img {
+    width: 210px;
+    margin-bottom: 30px;
+  }
+}
+
+/*DESKTOP*/
+
+@media screen and (min-width: 1200px) {
+  .clients-header {
+    padding-top: 0;
+  }
+
+  .clients {
+    justify-content: center;
+    margin-top: 47px;
+    list-style: none;
+    display: flex;
+    gap: 30px;
+  }
+
+  .clients__img {
+    width: 170px;
+    height: 92px;
+    border: 1px solid rgba(175, 177, 184, 1);
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    fill: var(--clients);
+    flex-grow: 1;
+    @include transition;
+    &:hover {
+      fill: var(--light-color);
+      border-color: var(--light-color);
+      cursor: pointer;
+    }
+    &:focus {
+      fill: var(--light-color);
+      border-color: var(--light-color);
+      cursor: pointer;
+    }
+  }
+  .clients__img-img {
+    margin: 17px 14px 17px 32px;
+  }
+}
